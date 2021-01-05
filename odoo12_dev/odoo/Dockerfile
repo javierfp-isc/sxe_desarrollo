@@ -12,9 +12,12 @@ RUN set -x; \
 #Copiamos el archivo odoo.conf
 COPY odoo.conf /opt/odoo/odoo.conf
 
-#Cambiamos la ruta del service para que tome los fuentes de la v12 de odoo
+#Copiamos el service odoo.sh
+COPY odoo.sh /etc/init.d/odoo.sh
+
+#Instalamos el módulo ptvsd de python
 RUN set -x; \
-	sed -i "s%/opt/odoo/src/OCB/odoo-bin%/opt/odoo/src/OCB12/odoo-bin%" /etc/init.d/odoo.sh
+	pip3 install ptvsd
 
 #Comando para arrancar ssh y entrar en bucle de espera
 ENTRYPOINT ["/usr/bin/entrypoint.sh"]
