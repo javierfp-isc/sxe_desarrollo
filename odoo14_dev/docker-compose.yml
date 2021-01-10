@@ -1,0 +1,20 @@
+version: '3'
+services:
+#Service odoo toma el Dockerfile de ./odoo
+ odoo:
+  build: ./odoo
+  hostname: odoo
+  environment:
+  - DBHOST=postgres
+  - DBUSER=odoo
+  - ODOOUSER=odoo
+  - DBPASS=abc123.
+  - ADMINPASS=abc123.
+  - LOGFILE=/var/log/odoo/odoo.log
+  - VERSION=OCB14
+  ports:
+  - "8069:8069"
+  - "5678:5678"
+  #Mapeo del directorio de la MV en el container
+  volumes:
+  - /root/odoo/src:/opt/odoo/src
