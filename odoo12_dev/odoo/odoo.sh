@@ -34,7 +34,7 @@ USER=odoo # Specify the user name (Default: odoo).
 PIDFILE=/var/run/$NAME.pid # pidfile
 
 # Additional options that are passed to the Daemon.
-DAEMON_ARGS="-m ptvsd --host 0.0.0.0 --port 5678 /opt/odoo/src/OCB12/odoo-bin -c $CONFIGFILE"
+DAEMON_ARGS="-m ptvsd --host 0.0.0.0 --port 5678 /opt/odoo/src/VERSION/odoo-bin -c $CONFIGFILE"
 
 display() {
 RED=$(tput setaf 1)

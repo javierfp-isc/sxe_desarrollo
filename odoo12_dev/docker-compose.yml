@@ -4,6 +4,14 @@ services:
  odoo:
   build: ./odoo
   hostname: odoo
+  environment:
+  - DBHOST=postgres
+  - DBUSER=odoo
+  - ODOOUSER=odoo
+  - DBPASS=abc123.
+  - ADMINPASS=abc123.
+  - LOGFILE=/var/log/odoo/odoo.log
+  - VERSION=OCB12
   ports:
   - "8069:8069"
   - "5678:5678"
