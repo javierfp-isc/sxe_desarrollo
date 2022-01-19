@@ -11,12 +11,12 @@ sed -i "s/VERSION/$VERSION/" /opt/odoo/odoo.conf
 sed -i "s/VERSION/$VERSION/" /etc/init.d/odoo.sh
 
 #Arrancamos servicios
-service ssh start
 service postgresql start
 
 #Creamos el archivo de log y cambiamos propietario
+mkdir -p /var/log/odoo
 touch $LOGFILE
-chown $ODOOUSER $LOGFILE
+chown -R $ODOOUSER:$ODOOUSER /var/log/odoo
 
 #Crea el usuario odoo en postgres
 su - postgres -c "createuser --createdb $DBUSER" && su - postgres -c "psql -c \"alter role $DBUSER with password '$DBPASS'\""
