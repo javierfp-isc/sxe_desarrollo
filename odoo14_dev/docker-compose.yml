@@ -11,7 +11,7 @@ services:
   - DBPASS=abc123.
   - ADMINPASS=abc123.
   - LOGFILE=/var/log/odoo/odoo.log
-  - VERSION=OCB
+  - VERSION=OCB14
   ports:
   - "8069:8069"
   - "5678:5678"
