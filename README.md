@@ -16,4 +16,4 @@ El escenario es el conjunto de elementos necesarios para la realización de la p
 
 Este repositorio contiene los escenarios:
 
-- **odoo12_dev**: creación sencilla de 1 container para odoo de la versión 12 para prácticas de desarrollo
+- **odoo_17_18_19_dev**: creación sencilla de 1 container para odoo de las versiones 17, 18 y 19 para prácticas de desarrollo. Para cambiar la versión editamos la variable VERSION en docker-compose.yml para que haga referencia al directorio en el que se encuentran las fuentes.
