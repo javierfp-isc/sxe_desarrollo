@@ -18,8 +18,8 @@ mkdir -p /var/log/odoo
 touch $LOGFILE
 chown -R $ODOOUSER:$ODOOUSER /var/log/odoo
 
-#Cambiamos propietario del directorio de odoo
-[ $(stat -c "%G" $LOCALFS) == "odoo" ] || chown -R odoo:odoo /opt/odoo
+#Cambiamos propietario del directorio filestore de odoo
+[ $(stat -c "%G" $LOCALFS) == "odoo" ] || chown -R odoo:odoo /opt/odoo/.local
 
 #Crea el usuario odoo en postgres
 su - postgres -c "createuser --createdb $DBUSER" && su - postgres -c "psql -c \"alter role $DBUSER with password '$DBPASS'\""
