@@ -19,6 +19,7 @@ services:
     ports:
       - "8069:8069"
       - "8072:8072"
+      - "15678:5678"
   postgres:
     image: odoo-postgres:17
     container_name: odoo-postgres-desarrollo
