@@ -1,0 +1,12 @@
+{
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/*.pyc": true
+  },
+  "editor.rulers": [88],
+  "python.analysis.typeCheckingMode": "basic",
+  "search.exclude": {
+    "**/.git": true,
+    "**/node_modules": true
+  }
+}
