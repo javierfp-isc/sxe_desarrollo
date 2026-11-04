@@ -1,0 +1,30 @@
+# Configuración local y secretos
+.env
+odoo.conf
+
+# Estado y datos de Docker / Odoo
+data/
+filestore/
+*.log
+logs/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# IDE y sistema
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Bases de datos y volcados
+*.dump
+*.sql
+*.sql.gz
+*.backup
