@@ -2,11 +2,11 @@
 ; Ejemplo orientativo. El profesor debe adaptar esta configuración a su imagen.
 ; La configuración real del curso se monta como /opt/odoo/odoo.conf.
 
-admin_passwd = cambia_esta_clave_maestra
+admin_passwd = abc123.
 db_host = db
 db_port = 5432
 db_user = odoo
-db_password = odoo
+db_password = abc123.
 
 addons_path = /opt/odoo/src/OCB/addons,/opt/odoo/src/extra-addons
 
