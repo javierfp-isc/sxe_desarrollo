@@ -242,7 +242,7 @@ Comandos orientativos (sustituye `nombre_modulo` por el nombre técnico real):
 
 ```bash
 docker compose exec odoo \
-  odoo --config=/opt/odoo/odoo.conf \
+  python3 /opt/odoo/src/OCB/odoo-bin --config=/opt/odoo/odoo.conf \
   -d nombre_base -i nombre_modulo --stop-after-init
 ```
 
@@ -250,7 +250,7 @@ Para actualizar un módulo ya instalado:
 
 ```bash
 docker compose exec odoo \
-  odoo --config=/opt/odoo/odoo.conf \
+  python3 /opt/odoo/src/OCB/odoo-bin --config=/opt/odoo/odoo.conf \
   -d nombre_base -u nombre_modulo --stop-after-init
 ```
 

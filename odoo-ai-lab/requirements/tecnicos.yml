@@ -3,7 +3,7 @@
 
 odoo_version: "19.0"
 development_conventions: "OCA"
-module_technical_name: ""
+module_technical_name: "library_management"
 
 # Dependencias adicionales solicitadas expresamente por el profesor.
 depends: []
@@ -16,4 +16,7 @@ constraints:
   - "Verificar APIs y patrones contra Odoo 19."
 
 # Requisitos adicionales que no estén expresados en funcionales.md.
-notes: []
+notes:
+  - "Máximo fijo de tres préstamos activos por socio."
+  - "El préstamo permanece activo hasta registrar explícitamente la devolución."
+  - "El librero puede crear y modificar; solo el administrador de biblioteca puede eliminar."

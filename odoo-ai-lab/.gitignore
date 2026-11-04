@@ -1,3 +1,6 @@
+#Artefactos de modulos generados
+addons/
+
 # Configuración local y secretos
 .env
 odoo.conf
