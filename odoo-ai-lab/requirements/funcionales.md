@@ -25,6 +25,7 @@ Crea una estructura de usuarios sencilla, un usuario administrador de la bibliot
 -Un socio puede tener un máximo fijo de 3 préstamos activos
 -El préstamo registra fecha de inicio, fecha prevista de devolución, fecha real de devolución, socio y libro asociados
 -La fecha prevista no finaliza automáticamente el préstamo; el librero debe registrar la devolución
+-Configura los permisos para que al asignar el rol de librero o administrador de biblioteca se disponga de todos los permisos necesarios para operar con libros, prestamos y usuarios.
 
 ## 6. Pantallas y navegación (Describe qué información debe consultar o modificar cada usuario y cómo espera acceder a ella. Puedes aportar capturas o ejemplos.)
 -Vistas formulario, tree y kanban para libros. La vista kanban se gestiona en función del estado de préstamo del libro

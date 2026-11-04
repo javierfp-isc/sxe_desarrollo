@@ -79,6 +79,7 @@ En el manifiesto:
 - No concedas permisos globales excesivos.
 - Usa vistas y acciones compatibles con Odoo 19; verifica la sintaxis en fuentes de la misma versión.
 - No introduzcas vistas heredadas, menús o acciones que no sean necesarios.
+- Con todos los artefactos generados quiero que elabores un informe que los describa de forma resumida en el archivo addons/MODULE_REPORT.md
 
 ## 6. Uso de YAML
 
