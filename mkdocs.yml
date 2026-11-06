@@ -5,7 +5,6 @@ site_author: Javier Fernández Peón
 theme:
   name: material
   language: es
-  logo: assets/logo.png
   favicon: assets/favicon.ico
   features:
     # Navegación mejorada
