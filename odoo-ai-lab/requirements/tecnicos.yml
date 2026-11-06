@@ -20,3 +20,4 @@ notes:
   - "Máximo fijo de tres préstamos activos por socio."
   - "El préstamo permanece activo hasta registrar explícitamente la devolución."
   - "El librero puede crear y modificar; solo el administrador de biblioteca puede eliminar."
+  - "El modelo library.loan define _rec_name = 'name' con campo computado store=True que genera referencia: 'Libro - Socio (DD/MM/YYYY)' para evitar mostrar IDs técnicos en la UI."

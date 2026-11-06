@@ -13,12 +13,15 @@ Crea una estructura de usuarios sencilla, un usuario administrador de la bibliot
 -Crea una estructura de campos para el libro sencilla (ISBN, Año, Edición, etc.)
 -Gestionar los usuarios (a través de algún modelo que herede de res.partner)
 -Gestionar los préstamos de libros a usuarios (mediante campos relacionales)
+-Crea datos demo para pruebas, 10 libros y 10 socios
+-Añade un sistema de puntuación a los libros, para que los usuarios pueda puntura y añadir una breve crítica o reseña al mismo
 
 
 ## 4. Información que se debe gestionar (Describe los datos que deben almacenarse, sus relaciones y cuáles son obligatorios, únicos o calculados, si se conocen.)
 -Usuarios de la biblioteca: Modelo heredado de res.partner
 -Libros: Modelo heredado de product.product, añadiendo campos específicos para caracterizar un libro (Estado, ISBN, año edicición, edición, etc.)
 -Un préstamo es un elemento que relaciona un libro con un usuario. Se gestionará mediante un modelo propio
+
 
 ## 5. Reglas de negocio (Explica las condiciones que deben cumplirse, las validaciones y las transiciones de estado.)
 -Un préstamo (relación libro con usuario) solo puede implicar un usuario, es decir un libro puede estar en estado prestado/no prestado, y de ser el caso solamente se puede hacer un préstamo a un único usuario en un instante dado
@@ -46,6 +49,22 @@ Crea una estructura de usuarios sencilla, un usuario administrador de la bibliot
 - Cierre automático de préstamos al alcanzar la fecha prevista.
 - Gestión de multas, pagos, reservas, avisos por correo y acceso de socios al portal.
 
-## 9. Dudas pendientes
+## 9. Requisitos y restricciones y buenas prácticas
 
-- Ninguna para esta versión sencilla.
+-Los modelos deben disponer de un campo de referencia legible (name) usado como _rec_name para mostrar etiquetas intuitivas en la interfaz (breadcrumbs, títulos, selectores).
+-Los modelos nuevos (_name) deben definir _description para etiqueta legible en menús y vistas; los modelos heredados (_inherit) no requieren _name ni _description propios.
+-Validaciones de integridad de negocio: usar @api.constrains (Python) para reglas que deben cumplirse siempre; evitar depender solo de validaciones en vistas (JS).
+-Campos computados que se usan en búsquedas, dominios o agrupaciones: definir store=True y @api.depends correcto con todas las dependencias.
+-Preferir herencia de modelos estándar (res.partner, product.product, product.template) sobre crear modelos desde cero cuando la semántica encaje; aprovecha campos, vistas y lógica existente.
+-No duplicar lógica: centralizar reglas de negocio en el modelo (métodos Python), no en controladores ni vistas.
+-Nomenclatura coherente: campos booleanos con prefijo "is_" o "has_", campos de conteo con sufijo "_count", campos de estado con "state" y selection.
+-Usar _order en modelos con listas naturales (fechas, nombres) para UX predecible.
+-Permisos (ACL) por modelo en ir.model.access.csv: mínimo lectura/creación/escritura según rol; reglas de registro (record rules) solo si hay requisito real de segregación de datos.
+-No conceder permisos de unlink (eliminar) a roles funcionales básicos; reservar a administrador.
+-Evitar hardcoded strings en Python: usar _() para traducibles; etiquetas de campos y vistas en español (idioma base del proyecto).
+-Vistas: usar widgets apropiados (badge para selection/state, statusbar para flujos, kanban para tableros visuales).
+-Acciones de ventana (ir.actions.act_window): definir domain y context para filtrar y pre-rellenar según el caso de uso.
+-Menús: agrupar por área funcional, sequence ordenado, groups para control de visibilidad.
+-Pruebas: cubrir casos de uso críticos (reglas de negocio, transiciones de estado, validaciones) con tests unitarios en tests/.
+-Documentación: README.md del módulo con instalación, configuración y casos de uso principales; actualizar requirements/ ante decisiones de diseño relevantes.
+
